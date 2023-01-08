@@ -70,7 +70,7 @@ export default function CadastroModal({ tituloButton }) {
               USERNAME:
               <input
                 type="text"
-                name="sobrenome"
+                name="user_name"
                 placeholder="Digite seu sobrenome"
                 value={user_name}
                 onChange={(e) => setUser_name(e.target.value)}

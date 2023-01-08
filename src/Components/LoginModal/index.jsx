@@ -85,7 +85,7 @@ export default function LoginModal({ showCadastro, tituloButton }) {
             </label>
             <label className='remenber' border="none">
               Remenber:
-              <input type="checkbox" onClick={(e) => setRemember(!remember)} />
+              <input type="checkbox" checked={remember} onClick={(e) => setRemember(!remember)} />
             </label>
           </div>
         </S.MyModal.Body>
