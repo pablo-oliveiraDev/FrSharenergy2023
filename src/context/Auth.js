@@ -8,6 +8,9 @@ export const AuthProvider = ({ children }) => {
   const [loadingAuth, setLoadingAuth] = useState(false);
   const [loading, setLoading] = useState(true);
   const [remember, setRemember] = useState(null);
+  const [itemsPerPage, setItemsPerPage] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [pages, setPages] = useState(0);
 
   useEffect(() => {
     function loadingStorage() {
@@ -56,15 +59,8 @@ export const AuthProvider = ({ children }) => {
         toast.error("Que pena!\nAlgo deu errado!😓");
       });
   }
-  console.log(remember);
-  async function cadastro(
-    nome,
-    user_name,
-    email,
-    senha,
-    cpf,
-    telefone
-  ) {
+  
+  async function cadastro(nome, user_name, email, senha, cpf, telefone) {
     await api
       .post(`/userLogRoutes/`, {
         nome: nome,
@@ -102,6 +98,12 @@ export const AuthProvider = ({ children }) => {
         user,
         remember,
         loadingAuth,
+        pages,
+        setPages,
+        currentPage,
+        setCurrentPage,
+        itemsPerPage,
+        setItemsPerPage,
         setRemember,
         login,
         cadastro,

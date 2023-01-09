@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration:none;
     list-style:none;
     outline:none;
+     overflow: hidden;
    
    }
    
@@ -16,6 +17,8 @@ const GlobalStyle = createGlobalStyle`
    button{
       cursor: pointer;
       transition:ease-in-out .15s;
+      text-decoration:none;
+    list-style:none;
       
    }
    
@@ -31,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
       -moz-osx-font-smoothing: grayscale;
       background:#fff;
       width:100%;
-      height:100%;
+      height:60%;
      
    }
 `;
