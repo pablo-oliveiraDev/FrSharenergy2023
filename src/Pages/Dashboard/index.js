@@ -14,6 +14,7 @@ export default function Dashboard() {
           .then((res) => {
             setResult(res.data)
           })
+        
       }
     }
     getStatusCode()
@@ -32,7 +33,7 @@ export default function Dashboard() {
     <Layout>
       <S.MyContainer>
         <div className='imagem' id='imagem'>
-        <img src={result} alt='result' {...result ==='' && 'hidden'} />
+        <img src={result.toString()} alt='result' />
         
         </div>
         <h3>Digite um status code !</h3>

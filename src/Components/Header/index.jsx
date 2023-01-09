@@ -13,7 +13,7 @@ export default function Header() {
         <>
             <S.MyNavbar bg="primary" variant="dark">
                 <S.MyContainer>
-                    <S.MyNavbar.Brand className='brand'>WELCOME SHARENERGY 2023</S.MyNavbar.Brand>
+                    <S.MyNavbar.Brand className='brand'>WELCOME SHARENERGY 2023❤</S.MyNavbar.Brand>
                     <div >
                         <span >Bem Vindo:<br />
                             {signed ?
