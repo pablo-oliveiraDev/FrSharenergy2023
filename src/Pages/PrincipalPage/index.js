@@ -23,7 +23,7 @@ export default function PrinciapalPage() {
   let sCurrent = items.slice(startIndex, endIndex);
   let fCurrent = filter.slice(startIndex, endIndex);
   const currentItems = textFilter ==='' ? sCurrent : fCurrent;  
-  setQntd(120);
+ 
   setItemsPerPage(Number(qntdPerPage));
   useEffect(() => {
     async function loadRandom() {
@@ -91,7 +91,7 @@ export default function PrinciapalPage() {
             </option>
             <option
               value={4}             
-              selected="selected"
+              defaultValue={4}
             >
               4
             </option>

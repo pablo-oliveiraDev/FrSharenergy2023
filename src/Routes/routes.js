@@ -2,9 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Dashboard from "../Pages/Dashboard";
 import Home from "../Pages/Home";
-import Services from "../Pages/Services";
+import RandomDog from "../Pages/RandomDog";
 import DefaultPage from "../Pages/DefaultPage";
 import PrincipalPage from "../Pages/PrincipalPage";
+import ListUsers from "../Pages/ListUsers";
 import PrivateRoutes from "./PrivateRoutes";
 
 export default function MainRoutes() {
@@ -15,7 +16,8 @@ export default function MainRoutes() {
       <Route element={<PrivateRoutes />}>
         <Route path="/principal" element={<PrincipalPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/dog" element={<RandomDog />} />
+        <Route path="/listUsers" element={<ListUsers />} />
       </Route>
     </Routes>
   );

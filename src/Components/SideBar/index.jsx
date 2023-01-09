@@ -13,23 +13,23 @@ const sidebarNavItems = [
         section: 'principal'
     },
     {
-        display: 'Dashboard',
+        display: 'StatusCode',
         icon: <i className='bx bx-star'><IconsMenu.TbLayoutDashboard size={20} /></i>,
         num: 2,
         to: '/Dashboard',
         section: 'Dashboard'
     },
     {
-        display: 'Serviços',
+        display: 'Random Dog',
         icon: <i className='bx bx-calendar'><IconsMenu.TbLayoutDashboard size={20} /></i>,
-        to: '/services',
-        section: 'services'
+        to: '/dog',
+        section: 'dog'
     },
     {
-        display: 'List ',
+        display: 'List Users ',
         icon: <i className='bx bx-calendar'><IconsMenu.TbLayoutDashboard size={20} /></i>,
-        to: '/services',
-        section: 'services'
+        to: '/listUsers',
+        section: 'listUsers'
     },
 
 
