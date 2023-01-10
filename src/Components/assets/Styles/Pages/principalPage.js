@@ -98,4 +98,5 @@ export const MyScrool = styled.div`
   margin-top: 10px;
   overflow: ${(props) => (props.setScroll === 1 ? 0 : "hidden")};
 `;
+
 export const labelContainer = styled.div``;

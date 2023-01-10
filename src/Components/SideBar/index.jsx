@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Navigate, useLocation } from 'react-router-dom';
+import { Link,  useLocation } from 'react-router-dom';
 import * as S from '../assets/Styles/Components/sideBar2';
 
 import * as IconsMenu from 'react-icons/tb';

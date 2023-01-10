@@ -1,40 +1,77 @@
 import * as React from 'react';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import * as IconsFc from 'react-icons/fc';
-import * as S from '../assets/Styles/Components/cadastroModal';
+import * as S from '../assets/Styles/Components/cadList';
 import IMaskInput from 'react-input-mask';
-import { AuthContext } from '../../context/Auth';
+import api from '../services/api';
 
 
-export default function CadastroModal({ tituloButton }) {
+
+export default function CadList({ tituloButton }) {
     const [show, setShow] = useState(false);
     const [nome, setNome] = useState('');
-
-    const [cpf, setCPF] = useState('');
     const [email, setEmail] = useState('');
+    const [cpf, setCPF] = useState('');
     const [telefone, setTelefone] = useState('');
-    const [uf, setUf] = useState('');
-
     const [cep, setCep] = useState('');
-    const [rua, setRua] = useState('');
     const [cidade, setCidade] = useState('');
+    const [rua, setRua] = useState('');
+    const [complemento, setComplemento] = useState('');
     const [numero, setNumero] = useState('');
-
+    const [uf, setUf] = useState('');
     const [mostrarEndereco, setMostarEndereco] = useState('');
-
     const [msgError, setMsgError] = useState('');
 
-    function cadastro() {
 
+
+
+
+    async function cadastro(nome,
+        email,
+        cpf,
+        telefone,
+        cep,
+        cidade,
+        rua,
+        numero,
+        complemento) {
+        let response = '';
+        await api.post('/listUser', {
+            nome,
+            email,
+            cpf,
+            telefone,
+            cep,
+            cidade,
+            rua,
+            numero,
+            complemento
+        })
+            .then((res) => {
+                response = res.data;
+                toast.success(res.data.message);
+
+            });
+        console.log(response);
+        if (response.data.statusCode === 500) {
+            toast.error(response.data.message);
+        }
     }
 
 
     const handleClose = () => {
         setMostarEndereco('');
         setShow(false);
+        setNome('');
+        setEmail('');
+        setCPF('');
+        setTelefone('');
         setCep('');
-        setRua('');
         setCidade('');
+        setRua('');
+        setNumero('');
+        setComplemento('');
         setMsgError('');
 
     };
@@ -44,7 +81,6 @@ export default function CadastroModal({ tituloButton }) {
             cpf !== '' &&
             email !== '' &&
             telefone !== '' &&
-
             cep !== '' &&
             rua !== '' &&
             cidade !== ''
@@ -54,10 +90,11 @@ export default function CadastroModal({ tituloButton }) {
                 email,
                 cpf,
                 telefone,
+                cep,
+                cidade,
                 rua,
                 numero,
-                cep,
-                cidade
+                complemento
             )
             handleClose();
         } else {
@@ -130,7 +167,7 @@ export default function CadastroModal({ tituloButton }) {
                                 name='nome'
                                 placeholder='Digite seu nome'
                                 value={nome}
-                                onChange={(e) => setNome(e.target.value)}
+                                onChange={(e) => setNome(nome)}
                             />
                         </label>
 
@@ -153,7 +190,7 @@ export default function CadastroModal({ tituloButton }) {
                                 mask='999.999.999-99'
                                 placeholder='Digite o seu cpf'
                                 value={cpf}
-                                onChange={(e) => setCPF(e.target.value)}
+                                onChange={(e) => setCPF(e.target.value.replace(/\D/g, ''))}
                             />
                         </label>
                         <label>EMAIL:
@@ -194,6 +231,15 @@ export default function CadastroModal({ tituloButton }) {
                                     placeholder='Digite o nome da sua cidade'
                                     value={cidade + '-' + uf}
                                     onChange={(e) => setCidade(e.target.value)}
+                                />
+                            </label>
+                            <label>COMPLEMENTO:
+                                <input
+                                    type='text'
+                                    name='complemento'
+                                    placeholder='Digite o nome da sua cidade'
+                                    value={complemento}
+                                    onChange={(e) => setComplemento(e.target.value)}
                                 />
                             </label>
                             <label>NUMERO:
