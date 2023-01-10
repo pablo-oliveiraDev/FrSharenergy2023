@@ -63,8 +63,7 @@ const Sidebar = () => {
     return (
       <S.MySideMenu className="sidebar">
         <div className="sidebar__logo">
-          MENU
-         
+          MENU         
         </div>
         <div ref={sidebarRef} className="sidebar__menu">
           <div

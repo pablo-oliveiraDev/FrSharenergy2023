@@ -167,7 +167,7 @@ export default function CadList({ tituloButton }) {
                                 name='nome'
                                 placeholder='Digite seu nome'
                                 value={nome}
-                                onChange={(e) => setNome(nome)}
+                                onChange={(e) => setNome(e.target.value)}
                             />
                         </label>
 

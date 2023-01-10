@@ -11,6 +11,7 @@ export const MyContainer = styled(Container)`
   .brand {
     font-size: 25px;
     font-weight: 700;
+    
   }
 
   button {
@@ -18,23 +19,60 @@ export const MyContainer = styled(Container)`
     background: none;
     border: none;
   }
+  @media(max-width:1024px){
+    width:100%;
+    margin-right:0;
+  }
+  @media(max-width:688px){
+    div {
+      justify-content: center;
+    }
+   
+    button{
+      margin-right:20px;
+      width:65px
+    }
+    .brand{
+      padding:0;
+      display:flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      font-size:15px;
+      font-weight:400;
+      width:200px;      
+    } 
+
+
+  }
 `;
-export const MyNav = styled(Nav)``;
+export const MyNav = styled(Nav)`
+`;
 export const MyNavbar = styled(Navbar)`
+
   color: #fff;
   .iconUser {
     margin-left: 1ch;
     margin-right: 4ch;
   }
-  span {
-  }
+  
   span .spanNome {
-    font-weight: 500;
+    padding:0;
+    font-weight:500;
     font-size: 18px;
     color: #fff;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+  }
+  @media(max-width:688px){
+   
+    span .spanNome {
+      font-size: 12px;
+      width: 120px;           
+    } 
+    .iconUser {
+       display:none;
+      }
   }
 `;

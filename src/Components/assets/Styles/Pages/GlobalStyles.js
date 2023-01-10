@@ -11,7 +11,11 @@ const GlobalStyle = createGlobalStyle`
      overflow: hidden;
    
    }
-   
+   @media(max-width:414px){
+    * {
+     
+    } 
+   }
   
    a,
    button{

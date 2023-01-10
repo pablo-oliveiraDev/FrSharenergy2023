@@ -24,6 +24,14 @@ export const MyContainer = styled(Container)`
     background: none;
     border: none;
   }
+  @media(max-width:688px){
+    .brand {
+      display:none;
+    }
+  }
+  @media(max-width:414px){
+      margin-left:100px;
+    }
 `;
 export const MyNav = styled(Nav)``;
 export const MyNavbar = styled(Navbar)`
@@ -45,6 +53,7 @@ export const MyNavbar = styled(Navbar)`
     align-items: center;
     justify-content: center;
   }
+ 
 `;
 
 export const Header = styled.div`
@@ -62,19 +71,29 @@ export const MyButton = styled.button`
   width: 25px;
   font-weight: bolder;
   color: #fff;
-  
+    
 `;
 export const MySpan = styled.span`
   font-size: 20px;
   margin-right: 1ch;
-
+  margin-left:0;
+  width: 20%;
+  @media(max-width:414px){
+   display:none;
+  }
 `;
 export const MyPages = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  button {
-    margin-left: 30px;
+ button:first-child{
+  margin :0;
+ }
+  button{
+    margin-left: 20px;
     text-align: center;
+  }
+  @media(max-width:414px){
+   
   }
 `;

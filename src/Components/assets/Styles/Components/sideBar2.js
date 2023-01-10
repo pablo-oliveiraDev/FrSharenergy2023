@@ -4,7 +4,10 @@ export const MySideMenu = styled.div`
   height: 1200px;
   width: 380px;
   background-color: rgba(4, 4, 4, 0.1);
-
+  @media (max-width:1024px ) {
+    width:120px;
+   
+  }
   .sidebar {
     position: fixed;
     top: 0;
@@ -45,7 +48,8 @@ export const MySideMenu = styled.div`
           color: #fff;
           font-size: 1.75rem;
         }
-
+       
+       
         &__icon {
           margin-right: 1rem;
 
@@ -53,6 +57,7 @@ export const MySideMenu = styled.div`
             font-size: 1.75rem;
           }
         }
+       
       }
 
       &__indicator {
@@ -66,6 +71,33 @@ export const MySideMenu = styled.div`
         transform: translateX(-50%);
         transition: 0.3s ease-in-out;
       }
+      @media (max-width:1024px ) {
+        .sidebar{
+         
+        }
+        .sidebar__menu{
+          display: none;
+        }
+        .sidebar__menu__item__icon{
+          margin:2px;
+          size: 1.75rem;
+          
+        }
+        .sidebar__menu__item{
+         padding:3rem 2rem;
+          
+        }
+          .sidebar__menu__item__text {
+            display: none;
+          }
+          .sidebar__menu__indicator{
+            width: calc(100% - 30px);
+            
+            
+          }
+        }
     }
+   
   }
+  
 `;

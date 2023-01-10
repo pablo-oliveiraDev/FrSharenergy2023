@@ -14,14 +14,12 @@ export const MyTable = styled(Table)`
 
 `;
 export const MyScrool = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  
+ margin-left:20px;
+  width: 500px;
+  height: 400px;
+  overflow-x: scroll;
+  position: relative;
   scroll-behavior: auto;
   margin-top: 10px;
-  overflow: ${(props) => (props.setScroll === 1 ? 0 : "hidden")};
+  
 `;

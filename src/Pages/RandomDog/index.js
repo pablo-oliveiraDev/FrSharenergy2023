@@ -29,14 +29,9 @@ export default function RandomDog() {
 
           {result}
         </div>
-        <h3>Digite um status code !</h3>
+        <h3>Randomize um doginho!</h3>
         <label>
-          <input type='number'
-            className='numero'
-            value={''}
-            onChange={''}
-            placeholder='Digite 1 a 999'
-          /><button onClick={() => setNumStatus(!numStatus)}>enviar</button>
+          <button onClick={() => setNumStatus(!numStatus)}>Atualizar</button>
 
         </label>
 

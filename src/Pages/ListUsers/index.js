@@ -9,7 +9,7 @@ import api from '../../Components/services/api';
 export default function ListUser() {
   const [results, setResults] = useState([]);
   const [notScroll, SetNotScroll] = useState(0);
- 
+
   useEffect(() => {
     async function loadListUser() {
       await api.get('/listUser')
@@ -24,10 +24,11 @@ export default function ListUser() {
     <Layout>
       <S.MyContainer>
         <CadList variant='primary' tituloButton={'NOVO REGISTRO'} />
-        <S.MyScrool setScroll={notScroll}>
 
-          <S.MyTable responsive striped bordered hover variant="dark" onMouseOver={() => SetNotScroll(1)}
-            onMouseLeave={() => SetNotScroll(0)}>
+
+        <S.MyTable   variant="dark" onMouseOver={() => SetNotScroll(1)}
+          onMouseLeave={() => SetNotScroll(0)}>
+          <S.MyScrool setScroll={notScroll}>
             <thead >
               <tr>
                 <th></th>
@@ -48,7 +49,7 @@ export default function ListUser() {
                 return (
                   <>
                     <tr key={index}>
-                      <td>{index+1}</td>
+                      <td>{index + 1}</td>
                       <td>{item.nome}</td>
                       <td>{item.email}</td>
                       <td>{item.cpf}</td>
@@ -58,8 +59,8 @@ export default function ListUser() {
                       <td>{item.rua}</td>
                       <td>{item.numero}</td>
                       <td>{item.complemento}</td>
-                      <td><EditList tituloButton={'edit'} 
-                      userlist={item}                 
+                      <td><EditList tituloButton={'edit'}
+                        userlist={item}
                       /></td>
                     </tr>
                     <tr></tr>
@@ -67,10 +68,10 @@ export default function ListUser() {
                 )
               })}
             </tbody>
+          </S.MyScrool>
+        </S.MyTable>
 
-          </S.MyTable>
 
-        </S.MyScrool>
       </S.MyContainer>
 
     </Layout >
