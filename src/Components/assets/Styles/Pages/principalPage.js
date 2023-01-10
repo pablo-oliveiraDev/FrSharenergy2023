@@ -99,7 +99,7 @@ export const MyItems = styled.div`
     flex-direction: column;
     height:500px;
     justify-content:center;
-   labe {
+   label {
     margin-bottom:50px;
    }
     .contLabel{  
