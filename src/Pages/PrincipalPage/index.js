@@ -13,7 +13,7 @@ export default function PrinciapalPage() {
   const [qntdPerPage, setQntdPerPage] = useState(4);
   const [textFilter, setTextFilter] = useState("");
   const [notScroll, SetNotScroll] = useState(0);
-  const { itemsPerPage, currentPage, setItemsPerPage, setPages } =
+  const { itemsPerPage, currentPage, setItemsPerPage, setPages,setCurrentPage } =
     useContext(AuthContext);
   let spages = Math.ceil(items.length / itemsPerPage);
   let FPages = Math.ceil(filter.length / itemsPerPage);
@@ -41,6 +41,7 @@ export default function PrinciapalPage() {
 
   useEffect(() => {
     function loadFilters() {
+      setCurrentPage(0)
       setFilter(
         items.filter(
           (u) =>
