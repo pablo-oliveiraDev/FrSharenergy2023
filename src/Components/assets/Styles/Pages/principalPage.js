@@ -1,5 +1,26 @@
 import styled from "styled-components";
 
+export const MyTitulo = styled.h2`
+display: flex;
+justify-content: center;
+align-items:center;
+margin-top:10px;
+@media(max-width:688px){
+    font-size:20px;
+    flex-direction:column;
+    :first-child{
+      margin-bottom:25px;
+    }
+  }
+  @media(max-width:414px){
+    input{
+      width:20ch;
+      margin-right:80px;
+    }
+  
+  }
+`;
+
 export const MyContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -18,6 +39,7 @@ export const MyContainer = styled.div`
   
   h2 .pesquisar {
     margin-left: 50px;
+    margin-top:20px;
   }
   .inputPesquisar {
     margin-left: 5px;
@@ -29,9 +51,7 @@ export const MyContainer = styled.div`
     align-items: center;
     margin-bottom: 8px;
   }
-  @media(max-width:688px){
-    
-  }
+  
   @media(max-width:414px){
     h2 {
       margin-left:0;
@@ -100,7 +120,7 @@ export const MyItems = styled.div`
     height:500px;
     justify-content:center;
    label {
-    margin-bottom:50px;
+    margin-bottom:15px;
    }
     .contLabel{  
       justify-content:space-around;
@@ -110,9 +130,17 @@ export const MyItems = styled.div`
     }
     img{
       margin-top:-400px;
+      
     }
     
   }
+   @media(max-width:414px){
+    img {
+      margin-right:70px;
+    }
+    
+   }
+   
 `;
 export const Foto = styled.div`
   display: flex;
@@ -170,6 +198,12 @@ export const Foto = styled.div`
      
     }
   }
+   @media(max-width:360px){
+    img{
+      margin-top:-54px;
+    }
+    
+   }
 `;
 export const MyScrool = styled.div`
 
@@ -193,6 +227,14 @@ export const MyScrool = styled.div`
  @media(max-width:414px){
   margin-left:15px;
   margin-top:-500px;
+  }
+ @media(max-width:375px){
+  margin-top:-700px;
+  height:480px;
+  }
+ @media(max-width:360px){
+  margin-top:-850px;
+  height:300px;
   }
 `;
 

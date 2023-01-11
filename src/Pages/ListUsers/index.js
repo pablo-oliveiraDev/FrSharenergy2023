@@ -23,10 +23,9 @@ export default function ListUser() {
   return (
     <Layout>
       <S.MyContainer>
+        <S.MyScroolVT setScroll={notScroll} >
         <CadList variant='primary' tituloButton={'NOVO REGISTRO'} />
-
-
-        <S.MyTable   variant="dark" onMouseOver={() => SetNotScroll(1)}
+        <S.MyTable striped bordered hover variant="dark" onMouseOver={() => SetNotScroll(1)}
           onMouseLeave={() => SetNotScroll(0)}>
           <S.MyScrool setScroll={notScroll}>
             <thead >
@@ -40,7 +39,7 @@ export default function ListUser() {
                 <th>Cidade</th>
                 <th>Rua</th>
                 <th>Numero</th>
-                <th>Complemento</th>
+                <th>Tipo</th>
                 <th>Editar?</th>
               </tr>
             </thead>
@@ -70,8 +69,7 @@ export default function ListUser() {
             </tbody>
           </S.MyScrool>
         </S.MyTable>
-
-
+        </S.MyScroolVT>
       </S.MyContainer>
 
     </Layout >

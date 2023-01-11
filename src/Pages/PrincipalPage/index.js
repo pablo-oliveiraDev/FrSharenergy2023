@@ -56,7 +56,7 @@ export default function PrinciapalPage() {
 
   return (
     <Layout>
-      <h2>
+      <S.MyTitulo>
         RANDOM LIST
         <label className="pesquisar">
           PESQUISAR :
@@ -68,7 +68,7 @@ export default function PrinciapalPage() {
             placeholder="Nome - email - Username"
           />
         </label>
-      </h2>
+      </S.MyTitulo>
 
       <S.MyContainer
         onMouseOver={() => SetNotScroll(1)}
