@@ -1,33 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../../Components/Layout';
 import api from '../../Components/services/api';
+import * as S from '../../Components/assets/Styles/Pages/dogs';
+import errou from '../../Components/assets/img/imgHome/errou.gif'
 
-import * as S from '../../Components/assets/Styles/Pages/statusCode';
-import { useHref } from 'react-router-dom';
 
 
 
 export default function RandomDog() {
   const [numStatus, setNumStatus] = useState(false);
   const [result, setResult] = useState('');
-  const [takeChange, setTakeChange] = useState('');
+  
 
   useEffect(() => {
     async function getStatusCode() {
-      await api.get(`https://random.dog/`)
+      await api.get(`/dog`)
         .then((res) => {
           setResult(res.data)
         })
     }
     getStatusCode()
   }, [numStatus]);
-  
-  return (    
+ 
+  return (
     <Layout>
       <S.MyContainer>
-        <div className='imagem' id='imagem'>
-
-          {result}
+        <div className='imagem' id='imagem' >
+          <img src={result.split('.').pop()=== 'jpg' ? result : errou} alt="dogs" />
         </div>
         <h3>Randomize um doginho!</h3>
         <label>
@@ -38,6 +37,6 @@ export default function RandomDog() {
       </S.MyContainer>
 
     </Layout >
-  
+
   );
 }

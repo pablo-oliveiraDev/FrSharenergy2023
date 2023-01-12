@@ -37,7 +37,7 @@ export default function PrinciapalPage() {
         });
     }
     loadRandom();
-  }, [qntd]);
+  }, [qntd,qntdPerPage]);
 
   useEffect(() => {
     function loadFilters() {
@@ -78,6 +78,7 @@ export default function PrinciapalPage() {
           <label className="labelTopo">
             Users/Page:
             <select
+              defaultValue={4}
               className="input-pesquisar"
               onChange={(e) => setQntdPerPage(e.target.value)}
               placeholder=""
@@ -93,7 +94,7 @@ export default function PrinciapalPage() {
               </option>
               <option
                 value={4}
-                defaultValue={4}
+
               >
                 4
               </option>
